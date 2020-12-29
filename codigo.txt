@@ -1,0 +1,8 @@
+@PutMapping("/atualiza/{id}")
+	public Usuario alterarUsuario(@RequestBody UsuarioDto dto, @PathVariable Long id){
+		Usuario usuario= ur.getOne(id);
+		usuario = dto.updateUsuario(usuario);
+		return ur.save(usuario);
+
+	
+	}
